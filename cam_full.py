@@ -5,15 +5,16 @@ import datetime
 
 
 def writeJPEG(timestamp):
-    ser = serial.Serial('/dev/cu.usbserial-1430', 115200, timeout=5)
+    ser = serial.Serial('/dev/cu.usbserial-1440', 115200, timeout=5)
+
     while True:
         ser.write(bytes("h", "utf-8"))
 
-        output = ser.readline()
-        print(output)
-        if "error" in str(output):
-            print("Error found in response")
-            break
+        # output = ser.readline()
+        # print(output)
+        # if "error" in str(output):
+        #     print("Error found in response")
+        #     break
 
 
 
@@ -34,7 +35,8 @@ def writeJPEG(timestamp):
 
         if len(data) != length:
             print("Incomplete frame!")
-            continue
+            print("Trying anyways...")
+            #continue
 
         # Optionally read footer
         footer = ser.read(4)
