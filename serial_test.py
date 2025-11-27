@@ -2,7 +2,7 @@ import serial
 do_serial = True
 
 if do_serial:
-	ser = serial.Serial('/dev/cu.usbserial-1430', 115200, timeout=5)
+	ser = serial.Serial('/dev/cu.usbserial-14510', 115200, timeout=5)
 
 	while True:
 		user_input = input("Input: ")

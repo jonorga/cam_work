@@ -4,9 +4,6 @@ import numpy as np
 show_image = True
 pic_list = [x for x in os.listdir() if x[-4:] == ".jpg"]
 pic_list.sort()
-# for p in pic_list:
-# 	print(p)
-# exit()
 
 # Image is rows of pixels
 image1 = cv2.imread(pic_list[5])
